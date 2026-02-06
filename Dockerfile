@@ -11,12 +11,15 @@ RUN apk add --update --no-cache imagemagick
 RUN apk add --update --no-cache imagemagick-dev
 RUN apk add --update --no-cache icu-dev
 RUN apk add --update --no-cache libpng-dev
+RUN apk add --update --no-cache libwebp
+RUN apk add --update --no-cache libwebp-dev
 RUN apk add --update --no-cache libtool
 RUN apk add --update --no-cache libzip-dev
 RUN apk add --update --no-cache make
 RUN apk add --update --no-cache pcre-dev
 
 RUN docker-php-ext-install exif
+RUN docker-php-ext-configure gd --with-webp
 RUN docker-php-ext-install gd
 RUN docker-php-ext-install intl
 RUN docker-php-ext-install mysqli
