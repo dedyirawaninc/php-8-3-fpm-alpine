@@ -34,6 +34,8 @@ RUN docker-php-ext-configure opcache --enable-opcache
 RUN docker-php-ext-enable imagick
 RUN docker-php-ext-enable mysqli
 
+RUN php -m | grep -E '^mysqli$'
+
 RUN kill -USR2 1
 
 CMD ["php-fpm"]
