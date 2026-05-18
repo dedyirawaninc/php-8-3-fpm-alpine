@@ -6,10 +6,10 @@ FILENAME0=`basename $0`; FILE=$(echo $FILENAME0 | cut -d '.' -f 1)
 echo [${BASEDIR00}] [$CURRDIR00] [$FILENAME0] [$FILE]
 echo "......."
 git status
-git checkout main
-git pull origin main
-git merge develop
+git checkout develop
+git pull origin develop
+git merge main
 git add .
 git commit
-git push origin main
+git push origin develop
 exit 0
